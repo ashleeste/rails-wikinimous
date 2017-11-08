@@ -1,0 +1,13 @@
+<h1>All the Articles</h1>
+<ul>
+  <% @articles.each do |article| %>
+  <li>
+    <%= link_to article_path(article) do %>
+    <h2><%= article.title.capitalize %></h2>
+    <% end %>
+    <h3><%= article.content %></h3>
+    <%= link_to "Update", edit_article_path(article) %>
+    <%= link_to "Delete", article_path(article), method: "delete" %>
+  </li>
+  <% end %>
+</ul>
